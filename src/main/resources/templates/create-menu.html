@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Menu List</title>
+</head>
+<body>
+<h1>메뉴 목록</h1>
+
+<!-- 메뉴 ID 입력 폼 -->
+<form th:action="@{/menu/name}" method="get">
+  <label for="menuId">메뉴 ID:</label>
+  <input type="number" id="menuId" name="menuId" value="1" />
+  <button type="submit">조회</button>
+</form>
+
+<!-- 메뉴 이름 출력 -->
+<div th:if="${menu != null}">
+  <h2>선택한 메뉴:</h2>
+  <p th:text="'메뉴 이름: ' + ${menu.name}">메뉴 이름</p>
+</div>
+</body>
+</html>
